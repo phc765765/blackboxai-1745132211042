@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Học Toán Lớp 8 - Chủ Đề</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-gray-900 min-h-screen flex flex-col">
+  <header class="bg-gradient-to-r from-yellow-400 via-red-400 to-pink-500 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold tracking-wide">Học Toán Lớp 8</h1>
+      <nav>
+        <ul class="flex space-x-8 font-semibold text-lg">
+          <li><a href="#topics" class="hover:underline hover:text-yellow-200 transition">Chủ Đề</a></li>
+          <li><a href="#quiz" class="hover:underline hover:text-yellow-200 transition">Trắc Nghiệm</a></li>
+          <li><a href="#about" class="hover:underline hover:text-yellow-200 transition">Giới Thiệu</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow container mx-auto px-4 py-10">
+    <section id="topics" class="mb-16">
+      <h2 class="text-4xl font-extrabold mb-8 border-b-4 border-yellow-300 inline-block text-yellow-100 drop-shadow-lg">Các Chủ Đề Toán Lớp 8</h2>
+      <div class="space-y-12">
+        <!-- Topic: Đại Số Cơ Bản -->
+        <article class="bg-white bg-opacity-80 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+          <h3 class="text-3xl font-bold mb-4 text-purple-700 cursor-pointer" onclick="toggleContent('algebra')">Đại Số Cơ Bản <i class="fas fa-chevron-down ml-2"></i></h3>
+          <div id="algebra" class="hidden">
+            <section class="mb-6">
+              <h4 class="text-2xl font-semibold mb-2">Lí Thuyết</h4>
+              <p class="text-gray-800 mb-3">Hiểu về biến, biểu thức và phương trình đơn giản.</p>
+              <ul class="list-disc list-inside text-gray-700">
+                <li>Biến và Hằng số</li>
+                <li>Phương trình đơn giản</li>
+                <li>Biểu thức đại số</li>
+              </ul>
+            </section>
+            <section>
+              <h4 class="text-2xl font-semibold mb-2">Bài Tập</h4>
+            <ol class="list-decimal list-inside space-y-4 text-gray-800">
+                <li>
+                  Giải phương trình: 2x + 5 = 15
+                  <button data-target="solution1" class="ml-4 px-3 py-1 bg-yellow-400 text-yellow-900 rounded-md min-w-[44px] hover:bg-yellow-500 transition" aria-expanded="false" aria-controls="solution1" onclick="toggleSolution(event)">Hiển thị/Ẩn lời giải</button>
+                  <div id="solution1" class="hidden mt-2 p-4 bg-yellow-100 text-yellow-900 rounded-md">
+                    <strong>Lời giải:</strong>
+                    <p>Bước 1: Chuyển 5 sang vế phải: 2x = 15 - 5</p>
+                    <p>Bước 2: Tính 15 - 5 = 10, ta có 2x = 10</p>
+                    <p>Bước 3: Chia cả hai vế cho 2: x = 10 / 2 = 5</p>
+                    <p>Vậy nghiệm của phương trình là x = 5.</p>
+                  </div>
+                </li>
+                <li>
+                  Rút gọn: 3(a + 4) - 2a
+                  <button data-target="solution2" class="ml-4 px-3 py-1 bg-yellow-400 text-yellow-900 rounded-md min-w-[44px] hover:bg-yellow-500 transition" aria-expanded="false" aria-controls="solution2" onclick="toggleSolution(event)">Hiển thị/Ẩn lời giải</button>
+                  <div id="solution2" class="hidden mt-2 p-4 bg-yellow-100 text-yellow-900 rounded-md">
+                    <strong>Lời giải:</strong>
+                    <p>Bước 1: Phân phối 3 vào (a + 4): 3a + 12</p>
+                    <p>Bước 2: Trừ 2a: 3a + 12 - 2a</p>
+                    <p>Bước 3: Rút gọn: (3a - 2a) + 12 = a + 12</p>
+                    <p>Vậy biểu thức rút gọn là a + 12.</p>
+                  </div>
+                </li>
+                <li>
+                  Giải phương trình: 3x - 7 = 11
+                  <button data-target="solution5" class="ml-4 px-3 py-1 bg-yellow-400 text-yellow-900 rounded-md min-w-[44px] hover:bg-yellow-500 transition" aria-expanded="false" aria-controls="solution5" onclick="toggleSolution(event)">Hiển thị/Ẩn lời giải</button>
+                  <div id="solution5" class="hidden mt-2 p-4 bg-yellow-100 text-yellow-900 rounded-md">
+                    <strong>Lời giải:</strong>
+                    <p>Bước 1: Chuyển -7 sang vế phải: 3x = 11 + 7</p>
+                    <p>Bước 2: Tính 11 + 7 = 18, ta có 3x = 18</p>
+                    <p>Bước 3: Chia cả hai vế cho 3: x = 18 / 3 = 6</p>
+                    <p>Vậy nghiệm của phương trình là x = 6.</p>
+                  </div>
+                </li>
+                <li>
+                  Tính giá trị biểu thức: 4a - 3b với a = 2, b = 5
+                  <button data-target="solution6" class="ml-4 px-3 py-1 bg-yellow-400 text-yellow-900 rounded-md min-w-[44px] hover:bg-yellow-500 transition" aria-expanded="false" aria-controls="solution6" onclick="toggleSolution(event)">Hiển thị/Ẩn lời giải</button>
+                  <div id="solution6" class="hidden mt-2 p-4 bg-yellow-100 text-yellow-900 rounded-md">
+                    <strong>Lời giải:</strong>
+                    <p>Bước 1: Thay a = 2, b = 5 vào biểu thức: 4(2) - 3(5)</p>
+                    <p>Bước 2: Tính: 8 - 15 = -7</p>
+                    <p>Vậy giá trị biểu thức là -7.</p>
+                  </div>
+                </li>
+                <li>
+                  Rút gọn biểu thức: 5x + 3x - 2x
+                  <button data-target="solution7" class="ml-4 px-3 py-1 bg-yellow-400 text-yellow-900 rounded-md min-w-[44px] hover:bg-yellow-500 transition" aria-expanded="false" aria-controls="solution7" onclick="toggleSolution(event)">Hiển thị/Ẩn lời giải</button>
+                  <div id="solution7" class="hidden mt-2 p-4 bg-yellow-100 text-yellow-900 rounded-md">
+                    <strong>Lời giải:</strong>
+                    <p>Bước 1: Cộng các hệ số của x: 5 + 3 - 2 = 6</p>
+                    <p>Vậy biểu thức rút gọn là 6x.</p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+          </div>
+        </article>
+
+        <!-- Topic: Hình Học Cơ Bản -->
+        <article class="bg-white bg-opacity-80 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+          <h3 class="text-3xl font-bold mb-4 text-pink-700 cursor-pointer" onclick="toggleContent('geometry')">Hình Học Cơ Bản <i class="fas fa-chevron-down ml-2"></i></h3>
+          <div id="geometry" class="hidden">
+            <section class="mb-6">
+              <h4 class="text-2xl font-semibold mb-2">Lí Thuyết</h4>
+              <p class="text-gray-800 mb-3">Tìm hiểu về hình dạng, góc và tính chất của tam giác.</p>
+              <ul class="list-disc list-inside text-gray-700">
+                <li>Các loại góc</li>
+                <li>Tam giác và tính chất</li>
+                <li>Chu vi và diện tích</li>
+              </ul>
+            </section>
+            <section>
+              <h4 class="text-2xl font-semibold mb-2">Bài Tập</h4>
+            <ol class="list-decimal list-inside space-y-4 text-gray-800">
+                <li>
+                  Tính chu vi tam giác có các cạnh 5cm, 7cm, và 10cm.
+                  <button data-target="solution3" class="ml-4 px-3 py-1 bg-pink-300 text-pink-900 rounded-md min-w-[44px] hover:bg-pink-400 transition" aria-expanded="false" aria-controls="solution3" onclick="toggleSolution(event)">Hiển thị/Ẩn lời giải</button>
+                  <div id="solution3" class="hidden mt-2 p-4 bg-pink-100 text-pink-900 rounded-md">
+                    <strong>Lời giải:</strong>
+                    <p>Bước 1: Tính tổng các cạnh: 5 + 7 + 10 = 22 cm</p>
+                    <p>Vậy chu vi tam giác là 22 cm.</p>
+                  </div>
+                </li>
+                <li>
+                  Tính diện tích hình chữ nhật có chiều dài 8cm và chiều rộng 3cm.
+                  <button data-target="solution4" class="ml-4 px-3 py-1 bg-pink-300 text-pink-900 rounded-md min-w-[44px] hover:bg-pink-400 transition" aria-expanded="false" aria-controls="solution4" onclick="toggleSolution(event)">Hiển thị/Ẩn lời giải</button>
+                  <div id="solution4" class="hidden mt-2 p-4 bg-pink-100 text-pink-900 rounded-md">
+                    <strong>Lời giải:</strong>
+                    <p>Bước 1: Tính diện tích: chiều dài x chiều rộng = 8 x 3 = 24 cm²</p>
+                    <p>Vậy diện tích hình chữ nhật là 24 cm².</p>
+                  </div>
+                </li>
+                <li>
+                  Tính chu vi hình vuông có cạnh 6cm.
+                  <button data-target="solution8" class="ml-4 px-3 py-1 bg-pink-300 text-pink-900 rounded-md min-w-[44px] hover:bg-pink-400 transition" aria-expanded="false" aria-controls="solution8" onclick="toggleSolution(event)">Hiển thị/Ẩn lời giải</button>
+                  <div id="solution8" class="hidden mt-2 p-4 bg-pink-100 text-pink-900 rounded-md">
+                    <strong>Lời giải:</strong>
+                    <p>Bước 1: Chu vi hình vuông = 4 x cạnh = 4 x 6 = 24 cm</p>
+                    <p>Vậy chu vi hình vuông là 24 cm.</p>
+                  </div>
+                </li>
+                <li>
+                  Tính diện tích tam giác có đáy 10cm và chiều cao 5cm.
+                  <button data-target="solution9" class="ml-4 px-3 py-1 bg-pink-300 text-pink-900 rounded-md min-w-[44px] hover:bg-pink-400 transition" aria-expanded="false" aria-controls="solution9" onclick="toggleSolution(event)">Hiển thị/Ẩn lời giải</button>
+                  <div id="solution9" class="hidden mt-2 p-4 bg-pink-100 text-pink-900 rounded-md">
+                    <strong>Lời giải:</strong>
+                    <p>Bước 1: Diện tích tam giác = (đáy x chiều cao) / 2 = (10 x 5) / 2 = 25 cm²</p>
+                    <p>Vậy diện tích tam giác là 25 cm².</p>
+                  </div>
+                </li>
+                <li>
+                  Tính góc còn lại của tam giác khi biết hai góc là 50° và 60°.
+                  <button data-target="solution10" class="ml-4 px-3 py-1 bg-pink-300 text-pink-900 rounded-md min-w-[44px] hover:bg-pink-400 transition" aria-expanded="false" aria-controls="solution10" onclick="toggleSolution(event)">Hiển thị/Ẩn lời giải</button>
+                  <div id="solution10" class="hidden mt-2 p-4 bg-pink-100 text-pink-900 rounded-md">
+                    <strong>Lời giải:</strong>
+                    <p>Bước 1: Tổng ba góc tam giác = 180°</p>
+                    <p>Bước 2: Góc còn lại = 180° - (50° + 60°) = 70°</p>
+                    <p>Vậy góc còn lại là 70°.</p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+          </div>
+        </article>
+
+        <!-- Other topics can be updated similarly -->
+
+      </div>
+    </section>
+
+    <section id="quiz" class="mb-16">
+      <h2 class="text-4xl font-extrabold mb-8 border-b-4 border-green-600 inline-block text-green-100 drop-shadow-lg">Bài Tập Trắc Nghiệm Có Đáp Án Chi Tiết</h2>
+      <form id="quizForm" class="space-y-6 text-gray-800">
+          <ol class="list-decimal list-inside space-y-6">
+          <li class="quiz-question" data-answer="B">
+            <p class="font-semibold">1. Tính giá trị của biểu thức: 3x + 2 khi x = 4</p>
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+              <li><label><input type="radio" name="q1" value="A" class="mr-2">A. 10</label></li>
+              <li><label><input type="radio" name="q1" value="B" class="mr-2">B. 14</label></li>
+              <li><label><input type="radio" name="q1" value="C" class="mr-2">C. 12</label></li>
+              <li><label><input type="radio" name="q1" value="D" class="mr-2">D. 16</label></li>
+            </ul>
+            <p class="mt-2 explanation hidden text-gray-700"></p>
+          </li>
+          <li class="quiz-question" data-answer="A">
+            <p class="font-semibold">2. Tính diện tích hình chữ nhật có chiều dài 7cm và chiều rộng 5cm</p>
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+              <li><label><input type="radio" name="q2" value="A" class="mr-2">A. 35 cm²</label></li>
+              <li><label><input type="radio" name="q2" value="B" class="mr-2">B. 12 cm²</label></li>
+              <li><label><input type="radio" name="q2" value="C" class="mr-2">C. 24 cm²</label></li>
+              <li><label><input type="radio" name="q2" value="D" class="mr-2">D. 30 cm²</label></li>
+            </ul>
+            <p class="mt-2 explanation hidden text-gray-700"></p>
+          </li>
+          <li class="quiz-question" data-answer="C">
+            <p class="font-semibold">3. Số nguyên tố nhỏ nhất là số nào?</p>
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+              <li><label><input type="radio" name="q3" value="A" class="mr-2">A. 0</label></li>
+              <li><label><input type="radio" name="q3" value="B" class="mr-2">B. 1</label></li>
+              <li><label><input type="radio" name="q3" value="C" class="mr-2">C. 2</label></li>
+              <li><label><input type="radio" name="q3" value="D" class="mr-2">D. 3</label></li>
+            </ul>
+            <p class="mt-2 explanation hidden text-gray-700"></p>
+          </li>
+          <li class="quiz-question" data-answer="D">
+            <p class="font-semibold">4. Tính tổng của các số: 5, 7, 9</p>
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+              <li><label><input type="radio" name="q4" value="A" class="mr-2">A. 20</label></li>
+              <li><label><input type="radio" name="q4" value="B" class="mr-2">B. 19</label></li>
+              <li><label><input type="radio" name="q4" value="C" class="mr-2">C. 21</label></li>
+              <li><label><input type="radio" name="q4" value="D" class="mr-2">D. 21</label></li>
+            </ul>
+            <p class="mt-2 explanation hidden text-gray-700"></p>
+          </li>
+          <li class="quiz-question" data-answer="A">
+            <p class="font-semibold">5. Tính diện tích hình tròn có bán kính 7cm (π = 3.14)</p>
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+              <li><label><input type="radio" name="q5" value="A" class="mr-2">A. 153.86 cm²</label></li>
+              <li><label><input type="radio" name="q5" value="B" class="mr-2">B. 140 cm²</label></li>
+              <li><label><input type="radio" name="q5" value="C" class="mr-2">C. 154 cm²</label></li>
+              <li><label><input type="radio" name="q5" value="D" class="mr-2">D. 150 cm²</label></li>
+            </ul>
+            <p class="mt-2 explanation hidden text-gray-700"></p>
+          </li>
+        </ol>
+        <button type="submit" class="mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded transition">Nộp bài</button>
+        <p id="quizResult" class="mt-4 font-semibold text-lg"></p>
+      </form>
+    </section>
+
+    <section id="about" class="text-center text-yellow-100 drop-shadow-md">
+      <h2 class="text-4xl font-extrabold mb-6">Giới Thiệu</h2>
+      <p class="max-w-xl mx-auto text-lg">Trang web này được thiết kế để giúp học sinh lớp 8 học các khái niệm toán học với bài học và bài tập. Nó được xây dựng bằng các công nghệ web hiện đại và thiết kế để dễ dàng điều hướng và đọc hiểu.</p>
+    </section>
+  </main>
+
+  <footer class="bg-gradient-to-r from-yellow-400 via-red-400 to-pink-500 text-white py-6 mt-auto shadow-inner">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2024 Học Toán Lớp 8. Bản quyền thuộc về tác giả.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleContent(id) {
+      const el = document.getElementById(id);
+      if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    }
+
+    function toggleSolution(event) {
+      const button = event.currentTarget;
+      const targetId = button.getAttribute('data-target');
+      const solutionEl = document.getElementById(targetId);
+      if (solutionEl.classList.contains('hidden')) {
+        solutionEl.classList.remove('hidden');
+        button.setAttribute('aria-expanded', 'true');
+      } else {
+        solutionEl.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    // Existing quiz submission logic
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const questions = document.querySelectorAll('.quiz-question');
+      let correctCount = 0;
+      questions.forEach((question, index) => {
+        const correctAnswer = question.getAttribute('data-answer');
+        const selected = question.querySelector('input[type="radio"]:checked');
+        const explanationEl = question.querySelector('.explanation');
+        if (selected) {
+          if (selected.value === correctAnswer) {
+            correctCount++;
+            explanationEl.textContent = 'Đúng!';
+            explanationEl.classList.remove('hidden', 'text-red-600');
+            explanationEl.classList.add('text-green-700');
+          } else {
+            explanationEl.textContent = 'Sai! Đáp án đúng là: ' + correctAnswer;
+            explanationEl.classList.remove('hidden', 'text-green-700');
+            explanationEl.classList.add('text-red-600');
+          }
+        } else {
+          explanationEl.textContent = 'Bạn chưa chọn đáp án.';
+          explanationEl.classList.remove('hidden', 'text-green-700', 'text-red-600');
+          explanationEl.classList.add('text-yellow-600');
+        }
+      });
+      const resultEl = document.getElementById('quizResult');
+      resultEl.textContent = `Bạn đã trả lời đúng ${correctCount} trên ${questions.length} câu hỏi.`;
+    });
+
+    // Dynamic addition of multiple-choice questions on clicking the quiz section heading
+    const quizSection = document.querySelector('div.bg-white.bg-opacity-90.p-8.rounded-xl.shadow-lg.hover\\:shadow-2xl.transition-shadow > h3.text-2xl.font-bold.mb-5.text-green-700');
+    const quizForm = document.getElementById('quizForm');
+    let newQuestionCount = 0;
+
+    quizSection.style.cursor = 'pointer';
+    quizSection.title = 'Click để thêm câu hỏi trắc nghiệm mới';
+
+    quizSection.addEventListener('click', () => {
+      newQuestionCount++;
+      const questionNumber = quizForm.querySelectorAll('.quiz-question').length + 1;
+
+      const newQuestion = document.createElement('li');
+      newQuestion.classList.add('quiz-question');
+      newQuestion.setAttribute('data-answer', 'A');
+      newQuestion.innerHTML = `
+        <p class="font-semibold">${questionNumber}. Câu hỏi mới: Nội dung câu hỏi trắc nghiệm ${newQuestionCount}?</p>
+        <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+          <li><label><input type="radio" name="q${questionNumber}" value="A" class="mr-2">A. Đáp án A</label></li>
+          <li><label><input type="radio" name="q${questionNumber}" value="B" class="mr-2">B. Đáp án B</label></li>
+          <li><label><input type="radio" name="q${questionNumber}" value="C" class="mr-2">C. Đáp án C</label></li>
+          <li><label><input type="radio" name="q${questionNumber}" value="D" class="mr-2">D. Đáp án D</label></li>
+        </ul>
+        <p class="mt-2 explanation hidden text-gray-700"></p>
+      `;
+      quizForm.querySelector('ol').appendChild(newQuestion);
+    });
+  </script>
+</body>
+</html>
