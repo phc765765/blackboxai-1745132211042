@@ -287,40 +287,7 @@
       <h2 class="text-5xl font-extrabold mb-6 tracking-wide drop-shadow-md">Giới Thiệu</h2>
       <p class="max-w-3xl mx-auto text-xl font-medium leading-relaxed drop-shadow-md">Trang web này được thiết kế để giúp học sinh lớp 8 học các khái niệm toán học với bài học và bài tập. Nó được xây dựng bằng các công nghệ web hiện đại và thiết kế để dễ dàng điều hướng và đọc hiểu.</p>
     </section>
-
-    <section id="math-tool" class="mb-16 bg-white bg-opacity-90 p-8 rounded-xl shadow-lg border-2 border-indigo-400 max-w-4xl mx-auto">
-      <h2 class="text-4xl font-extrabold mb-8 border-b-4 border-indigo-400 inline-block text-indigo-700 drop-shadow-lg">Công Cụ Toán Học</h2>
-      <div class="flex flex-col items-center space-y-4">
-        <input id="calc-input" type="text" placeholder="Nhập biểu thức toán học..." class="w-full p-3 border border-indigo-300 rounded text-lg font-mono" />
-        <div class="grid grid-cols-4 gap-3 w-full max-w-md">
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">7</button>
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">8</button>
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">9</button>
-          <button class="calc-btn bg-red-500 text-white py-2 rounded hover:bg-red-600 transition">C</button>
-
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">4</button>
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">5</button>
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">6</button>
-          <button class="calc-btn bg-indigo-700 text-white py-2 rounded hover:bg-indigo-800 transition">+</button>
-
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">1</button>
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">2</button>
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">3</button>
-          <button class="calc-btn bg-indigo-700 text-white py-2 rounded hover:bg-indigo-800 transition">-</button>
-
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">0</button>
-          <button class="calc-btn bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition">.</button>
-          <button id="calc-equals" class="bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">=</button>
-          <button class="calc-btn bg-indigo-700 text-white py-2 rounded hover:bg-indigo-800 transition">*</button>
-
-          <button class="calc-btn bg-indigo-700 text-white py-2 rounded hover:bg-indigo-800 transition col-span-2">()</button>
-          <button class="calc-btn bg-indigo-700 text-white py-2 rounded hover:bg-indigo-800 transition">/</button>
-          <button class="calc-btn bg-red-500 text-white py-2 rounded hover:bg-red-600 transition">DEL</button>
-        </div>
-      </div>
-    </section>
   </main>
-
 
   <footer class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white py-6 mt-auto shadow-inner">
     <div class="container mx-auto px-4 text-center">
@@ -388,105 +355,6 @@
         calcInput.value = result;
       } catch (e) {
         alert('Biểu thức không hợp lệ');
-      }
-    });
-
-    // Graph plotting functionality
-    const plotBtn = document.getElementById('plot-btn');
-    const equationsInput = document.getElementById('equations-input');
-    const plotContainer = document.getElementById('plot');
-    const intersectionsDiv = document.getElementById('intersections');
-
-    function parseEquation(eq) {
-      // Convert y=... to function-plot format
-      // Remove spaces
-      eq = eq.trim();
-      // Expect form y=expression (case insensitive)
-      if (!/^y\s*=/i.test(eq)) {
-        throw new Error('Phương trình phải có dạng y=...');
-      }
-      // Extract expression after y=
-      const expr = eq.split(/=/)[1];
-      if (!expr) {
-        throw new Error('Phương trình không hợp lệ.');
-      }
-      return expr.trim();
-    }
-
-    function findIntersections(functions) {
-      // For linear functions y = ax + b, find intersections pairwise
-      // This is a simple implementation for linear functions only
-      const intersections = [];
-      const linearRegex = /^([-+]?\d*\.?\d*)x\s*([-+]\s*\d+\.?\d*)?$/i;
-      for (let i = 0; i < functions.length; i++) {
-        for (let j = i + 1; j < functions.length; j++) {
-          const f1 = functions[i].replace(/\s+/g, '');
-          const f2 = functions[j].replace(/\s+/g, '');
-          const m1 = f1.match(linearRegex);
-          const m2 = f2.match(linearRegex);
-          if (m1 && m2) {
-            const a1 = m1[1] === '' || m1[1] === '+' ? 1 : (m1[1] === '-' ? -1 : parseFloat(m1[1]));
-            const b1 = m1[2] ? parseFloat(m1[2].replace(/\s+/g, '')) : 0;
-            const a2 = m2[1] === '' || m2[1] === '+' ? 1 : (m2[1] === '-' ? -1 : parseFloat(m2[1]));
-            const b2 = m2[2] ? parseFloat(m2[2].replace(/\s+/g, '')) : 0;
-            if (a1 !== a2) {
-              const x = (b2 - b1) / (a1 - a2);
-              const y = a1 * x + b1;
-              intersections.push({ pair: [i + 1, j + 1], point: { x, y } });
-            }
-          }
-        }
-      }
-      return intersections;
-    }
-
-    plotBtn.addEventListener('click', () => {
-      const lines = equationsInput.value.trim().split('\n').filter(line => line.trim() !== '');
-      let functions = [];
-      try {
-        functions = lines.map(parseEquation);
-      } catch (e) {
-        alert(e.message);
-        // Remove the graph tool section on error
-        const graphToolSection = document.getElementById('graph-tool');
-        if (graphToolSection) {
-          graphToolSection.remove();
-        }
-        return;
-      }
-      // Clear previous plot and intersections
-      plotContainer.innerHTML = '';
-      intersectionsDiv.textContent = '';
-
-      // Plot functions
-      try {
-        functionPlot({
-          target: '#plot',
-          width: plotContainer.clientWidth,
-          height: plotContainer.clientHeight,
-          yAxis: { domain: [-10, 10] },
-          xAxis: { domain: [-10, 10] },
-          grid: true,
-          data: functions.map(fn => ({ fn, sampler: 'builtIn', graphType: 'polyline' })),
-        });
-      } catch (e) {
-        alert('Lỗi khi vẽ đồ thị: ' + e.message);
-        // Remove the graph tool section on error
-        const graphToolSection = document.getElementById('graph-tool');
-        if (graphToolSection) {
-          graphToolSection.remove();
-        }
-        return;
-      }
-
-      // Find intersections
-      const intersections = findIntersections(functions);
-      if (intersections.length === 0) {
-        intersectionsDiv.textContent = 'Không tìm thấy điểm giao nhau.';
-      } else {
-        intersectionsDiv.innerHTML = '<strong>Điểm giao nhau:</strong><br/>' + intersections.map(inter => {
-          return `Đường ${inter.pair[0]} và Đường ${inter.pair[1]}: (x=${inter.point.x.toFixed(2)}, y=${inter.point.y.toFixed(2)})`;
-        }).join('<br/>');
       }
     });
   </script>
